@@ -1,0 +1,17 @@
+name: az_quickstart
+recipe: drupal8
+config:
+  php: '7.2'
+  via: apache:2.4
+  webroot: web
+  database: mysql:5.7
+  drush: ^9
+  xdebug: false
+services:
+  appserver:
+    build:
+      - composer install -o --no-dev
+tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/web
