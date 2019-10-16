@@ -74,6 +74,8 @@
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
