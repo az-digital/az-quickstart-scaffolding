@@ -10,8 +10,30 @@ config:
 services:
   appserver:
     build:
-      - composer install -o --no-dev
+      - composer global require hirak/prestissimo && composer install -o
 tooling:
+  # Provide a command to install Drupal.
+  # Current versions of the Bitnami MySQL container sometimes signal
+  # healthy before MySQL is fully started. This can result in MySQL errors
+  # in a race condition if Drupal is installed during the run phase.
+  quickstart-install:
+    service: appserver
+    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=quickstart_admin --account-pass=lando --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y --verbose
+  # Provide tooling to set the Quickstart dependency.
+  quickstart-branch:
+    service: appserver
+    cmd: /app/quickstart_branch.sh
+    level: app
+    options:
+      branch:
+        passthrough: true
+        describe: Branch to use, e.g. UADIGITAL-1234.
+        interactive:
+          type: input
+          message: Branch to use, e.g. UADIGITAL-1234.
+          default: master
+          weight: 600
+  # Provide Drush tooling to automatically know the Drupal root.
   drush:
     service: appserver
     cmd: drush --root=/app/web
