@@ -22,7 +22,7 @@ tooling:
   # Provide tooling to set the Quickstart dependency.
   quickstart-branch:
     service: appserver
-    cmd: /app/quickstart_branch.sh
+    cmd: /bin/bash /app/quickstart_branch.sh
     level: app
     options:
       branch:
