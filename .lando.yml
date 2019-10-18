@@ -18,7 +18,7 @@ tooling:
   # in a race condition if Drupal is installed during the run phase.
   quickstart-install:
     service: appserver
-    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=quickstart_admin --account-pass=lando --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y --verbose
+    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=lando --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y --verbose
   # Provide tooling to set the Quickstart dependency.
   quickstart-branch:
     service: appserver
