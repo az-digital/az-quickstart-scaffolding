@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## Description: Run the az_quickstart installation inside the web container.
+## Usage: quickstart-install
+## Example: "ddev quickstart-install"
+
+drush --root=/var/www/html/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=ddev --db-url=mysql://db:db@db:3306/db -y --verbose

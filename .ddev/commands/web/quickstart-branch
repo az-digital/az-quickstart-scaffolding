@@ -1,0 +1,12 @@
+#!/bin/sh
+
+## Description: Set the branch dependency of the az_quickstart package.
+## Usage: quickstart-branch [args]
+## Example: "ddev quickstart-branch BRANCHNAME"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ddev quickstart-branch BRANCHNAME"
+    exit 0
+fi
+
+composer require --verbose --working-dir="/var/www/html/" "az-digital/az_quickstart:dev-$*"
