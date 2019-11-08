@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="az-quickstart">
+  <description>Drupal Standards configuration for AZ QuickStart</description>
+  <!-- Check all files within the AZ QuickStart installation profile. -->
+  <file>./web/profiles/custom/az_quickstart</file>
+
+  <!-- Code is to be tested as Drupal 8. -->
+  <config name="drupal_core_version" value="8"/>
+
+  <!-- Set configuration so that warnings should not cause error exit status. -->
+  <config name="ignore_warnings_on_exit" value="1"/>
+
+  <!-- Select rules to use in parsing. -->
+  <rule ref="Drupal">
+    <!-- Remove warnings in regard to Drupal.org .info file generation. -->
+    <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
+
+    <!-- TagsNotGrouped has false positives. See https://www.drupal.org/node/2502837  -->
+    <exclude name="Drupal.Commenting.DocComment.TagsNotGrouped"/>
+
+    <!-- MissingShort has false positives. See https://www.drupal.org/project/drupal/issues/2572635  -->
+    <exclude name="Drupal.Commenting.DocComment.MissingShort"/>
+  </rule>
+
+</ruleset>
