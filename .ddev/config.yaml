@@ -1,7 +1,6 @@
 
 # Recipe for AZ Quickstart local development
 APIVersion: v1.11.2
-name: az-quickstart
 type: drupal8
 docroot: web
 php_version: "7.2"
