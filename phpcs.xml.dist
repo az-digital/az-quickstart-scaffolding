@@ -7,9 +7,6 @@
   <!-- Code is to be tested as Drupal 8. -->
   <config name="drupal_core_version" value="8"/>
 
-  <!-- Set configuration so that warnings should not cause error exit status. -->
-  <config name="ignore_warnings_on_exit" value="1"/>
-
   <!-- Select rules to use in parsing. -->
   <rule ref="Drupal">
     <!-- Remove warnings in regard to Drupal.org .info file generation. -->
