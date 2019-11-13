@@ -18,12 +18,12 @@
     ],
     "require": {
         "php": ">=7.0",
+        "az-digital/az_quickstart": "dev-master",
         "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
         "drush/drush": "^9.0.0",
-        "az-digital/az_quickstart": "dev-master",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -31,7 +31,8 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-        "drupal/core-dev": "8.8.0-alpha1"
+        "drupal/core-dev": "8.8.0-alpha1",
+        "mglaman/drupal-check": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
