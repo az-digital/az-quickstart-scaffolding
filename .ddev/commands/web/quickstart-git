@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## Description: Run git inside the web container az_quickstart repo
+## Usage: quickstart-git [flags] [args]
+## Example: "ddev quickstart-git status" or "ddev quickstart-git --version"
+
+git -C "/var/www/html/web/profiles/custom/az_quickstart" $@
