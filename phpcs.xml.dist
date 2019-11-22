@@ -4,6 +4,9 @@
   <!-- Check all files within the AZ QuickStart installation profile. -->
   <file>./web/profiles/custom/az_quickstart</file>
 
+  <exclude-pattern>*/arizona-bootstrap/*</exclude-pattern>
+  <exclude-pattern>*/ua-brand-icons/*</exclude-pattern>
+
   <!-- Code is to be tested as Drupal 8. -->
   <config name="drupal_core_version" value="8"/>
 
