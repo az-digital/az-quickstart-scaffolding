@@ -21,7 +21,7 @@
         "az-digital/az_quickstart": "dev-master",
         "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/core-composer-scaffold": "8.8.0",
         "drupal/console": "^1.0.2",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
@@ -31,7 +31,7 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-        "drupal/core-dev": "8.8.0-alpha1",
+        "drupal/core-dev": "8.8.0",
         "mglaman/drupal-check": "^1.0"
     },
     "conflict": {
@@ -79,12 +79,22 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
+            "file-mapping": {
+                "[project-root]/.editorconfig": {
+                    "path": "web/core/assets/scaffold/files/editorconfig",
+                    "overwrite": false
+                },
+                "[project-root]/.gitattributes": {
+                    "path": "web/core/assets/scaffold/files/gitattributes",
+                    "overwrite": false
+                }
+            },
+            "gitignore": false,
+            "locations": {
+                "web-root": "web/"
             }
         }
     }
