@@ -67,4 +67,5 @@
 
   <!-- Drupal8 sniffs -->
   <rule ref="Security.Drupal8">
+
 </ruleset>
