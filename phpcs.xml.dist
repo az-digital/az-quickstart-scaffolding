@@ -19,7 +19,8 @@
   <config name="ignore_warnings_on_exit" value="1"/>
 
   <!-- Framework or CMS used. Must be a class under Security_Sniffs. -->
-  <config name="CmsFramework" value="Drupal8"/>
+  <!-- TODO: Investigate this missing class -->
+  <!-- <config name="CmsFramework" value="Drupal8"/> -->
 
   <!-- Internal sniffs -->
   <rule ref="Internal.NoCodeFound">
