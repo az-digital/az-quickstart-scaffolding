@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="az-quickstart">
-  <description>Drupal Standards configuration for AZ QuickStart</description>
+  <description>PHPCS configuration for AZ QuickStart</description>
   <!-- Check all files within the AZ QuickStart installation profile. -->
   <file>./web/profiles/custom/az_quickstart</file>
 
+  <arg name="cache" value=".phpcs-cache"/>
+  <arg name="parallel" value="10"/>
+
+  <exclude-pattern>*min.css</exclude-pattern>
+  <exclude-pattern>*min.js</exclude-pattern>
   <exclude-pattern>*/arizona-bootstrap/*</exclude-pattern>
   <exclude-pattern>*/ua-brand-icons/*</exclude-pattern>
 
@@ -13,7 +18,18 @@
   <!-- Set configuration so that warnings should not cause error exit status. -->
   <config name="ignore_warnings_on_exit" value="1"/>
 
-  <!-- Select rules to use in parsing. -->
+  <!-- Framework or CMS used. Must be a class under Security_Sniffs. -->
+  <config name="CmsFramework" value="Drupal8"/>
+
+  <!-- Internal sniffs -->
+  <rule ref="Internal.NoCodeFound">
+    <!-- No PHP code in *.md *.txt *.yml -->
+    <exclude-pattern>*.md</exclude-pattern>
+    <exclude-pattern>*.txt</exclude-pattern>
+    <exclude-pattern>*.yml</exclude-pattern>
+  </rule>
+
+  <!-- Drupal sniffs. -->
   <rule ref="Drupal">
     <!-- Remove warnings in regard to Drupal.org .info file generation. -->
     <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
