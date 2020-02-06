@@ -64,4 +64,7 @@
   <!-- Misc -->
   <rule ref="Security.Misc.BadCorsHeader"/>
   <rule ref="Security.Misc.IncludeMismatch"/>
+
+  <!-- Drupal8 sniffs -->
+  <rule ref="Security.Drupal8">
 </ruleset>
