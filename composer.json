@@ -63,6 +63,9 @@
         "post-update-cmd": [
             "@composer drupal:scaffold",
             "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "sniff": [
+            "phpcs --extensions=php,inc,lib,module,info --standard=phpcs.xml.dist ."
         ]
     },
     "extra": {
