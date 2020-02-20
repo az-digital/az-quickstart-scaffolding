@@ -81,6 +81,7 @@
   <!-- Misc -->
   <rule ref="Security.Misc.BadCorsHeader"/>
   <rule ref="Security.Misc.IncludeMismatch"/>
+  <!--<rule ref="Security.Misc.TypeJuggle"/>-->
 
   <!-- Drupal8 sniffs -->
   <rule ref="Security.Drupal8"/>
