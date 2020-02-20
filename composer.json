@@ -51,6 +51,9 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
+        "dependency-audit": [
+            "./scripts/ci/dependency-audit.sh web"
+        ],
         "pre-install-cmd": [
             "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
