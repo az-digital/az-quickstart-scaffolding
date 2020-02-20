@@ -7,12 +7,12 @@ jobs:
     name: Dependency Audit
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Check dependencies for vulnerabilities
-      run: |
-        composer install
-        composer dependency-audit
-    - name: Run static code analysis
-      run: |
-        composer sniff
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check dependencies for vulnerabilities
+        run: |
+          composer install
+          composer dependency-audit
+      - name: Run static code analysis
+        run: |
+          composer sniff
