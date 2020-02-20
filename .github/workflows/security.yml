@@ -1,0 +1,13 @@
+name: Security workflow
+
+on: push
+
+jobs:
+  dependency-audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check dependencies for vulnerabilities
+      run: |
+        composer install
+        composer dependency-audit
