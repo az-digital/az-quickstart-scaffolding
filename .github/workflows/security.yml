@@ -13,3 +13,6 @@ jobs:
       run: |
         composer install
         composer dependency-audit
+    - name: Run static code analysis
+      run: |
+        composer sniff
