@@ -24,4 +24,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Run static code analysis
         run: |
+          composer install
           composer sniff
