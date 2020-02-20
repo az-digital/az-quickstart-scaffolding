@@ -9,20 +9,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Check dependencies for vulnerabilities
+      - name: Install site
         run: |
           composer install
-          composer dependency-audit
-      - name: Run static code analysis
+      - name: Check dependencies for vulnerabilities
         run: |
-          composer sniff
+          composer dependency-audit
   code-check:
     name: Static Code Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run static code analysis
+      - name: Install site
         run: |
           composer install
+      - name: Run static code analysis
+        run: |
           composer sniff
