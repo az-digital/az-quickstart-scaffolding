@@ -69,7 +69,7 @@
             "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "sniff": [
-            "phpcs -p --colors --standard=phpcs.xml.dist --extensions=php,install,module,profile,inc"
+            "phpcs -p --colors"
         ]
     },
     "extra": {
