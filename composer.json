@@ -22,7 +22,7 @@
         "composer/installers": "1.7.0",
         "cweagans/composer-patches": "1.6.7",
         "drupal/core-composer-scaffold": "8.8.2",
-        "drupal/console": "1.0.2",
+        "drupal/console": "1.9.3",
         "drupal/console-dotenv": "0.3.1",
         "drush/drush": "9.7.1",
         "vlucas/phpdotenv": "2.4.0",
