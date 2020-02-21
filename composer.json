@@ -26,14 +26,14 @@
         "drupal/console-dotenv": "0.3.1",
         "drush/drush": "9.7.1",
         "vlucas/phpdotenv": "2.4.0",
-        "webflo/drupal-finder": "1.1.0",
+        "webflo/drupal-finder": "1.2.0",
         "webmozart/path-util": "2.3.0",
         "zaporylie/composer-drupal-optimizations": "1.0.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
         "drupal/core-dev-pinned": "8.8.2",
-        "mglaman/drupal-check": "1.0.14"
+        "mglaman/drupal-check": "1.1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -66,6 +66,11 @@
         ]
     },
     "extra": {
+        "patches": {
+            "mglaman/drupal-check": {
+                "GH-135 Added TTY check": "https://github.com/mglaman/drupal-check/commit/4976ea5b7407d4bd48d363062b2b56fd5c946a89.diff"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "patchLevel": {
