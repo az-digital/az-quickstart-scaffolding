@@ -21,6 +21,6 @@ while read -r lockfile; do
   if ! security-checker security:check "${lockfile}"; then
     EXIT_STATUS=1
   fi
-done < <(find "${BASE_DIR}" -name composer.lock)
+done < <(find "${BASE_DIR}" -not -path "./vendor/*" -name composer.lock)
 
 exit ${EXIT_STATUS}

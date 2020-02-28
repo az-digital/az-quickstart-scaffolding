@@ -52,7 +52,7 @@
     },
     "scripts": {
         "dependency-audit": [
-            "./scripts/ci/dependency-audit.sh web"
+            "./scripts/ci/dependency-audit.sh"
         ],
         "pre-install-cmd": [
             "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
