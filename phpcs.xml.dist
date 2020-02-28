@@ -76,13 +76,13 @@
 
   <!-- CVE -->
   <!-- Entries from CVE database from vendor PHP and bugs.php.net -->
-  <rule ref="Security.CVE.20132110"/>
-  <rule ref="Security.CVE.20134113"/>
+  <rule ref="Security.CVE.CVE20132110"/>
+  <rule ref="Security.CVE.CVE20134113"/>
 
   <!-- Misc -->
   <rule ref="Security.Misc.BadCorsHeader"/>
   <rule ref="Security.Misc.IncludeMismatch"/>
-  <!--<rule ref="Security.Misc.TypeJuggle"/>-->
+  <rule ref="Security.Misc.TypeJuggle"/>
 
   <!-- Drupal8 sniffs -->
   <rule ref="Security.Drupal8"/>
