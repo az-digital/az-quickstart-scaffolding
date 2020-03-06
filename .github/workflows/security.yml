@@ -14,7 +14,7 @@ jobs:
           composer install
       - name: Check dependencies for vulnerabilities
         run: |
-          composer dependency-audit
+          composer security-check
   code-check:
     name: Static Code Check
     runs-on: ubuntu-latest
