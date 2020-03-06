@@ -10,6 +10,9 @@
 
 EXIT_STATUS=0
 
+echo "This script ignores ./vendor"
+echo "If you intend to check ./vendor, use ./dependency-audit.sh ./vendor"
+
 if [[ -z ${1} ]]; then
   BASE_DIR='.'
 else
