@@ -33,7 +33,9 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
         "drupal/core-dev-pinned": "8.8.2",
-        "mglaman/drupal-check": "1.1.0"
+        "mglaman/drupal-check": "1.1.0",
+        "pheromone/phpcs-security-audit": "dev-master#1b8a61d4ac8f4f1554bcbf67865f8e1c1b213bdd",
+        "sensiolabs/security-checker": "6.0.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -50,6 +52,9 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
+        "security-check": [
+            "security-checker security:check"
+        ],
         "pre-install-cmd": [
             "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
@@ -63,6 +68,9 @@
         "post-update-cmd": [
             "@composer drupal:scaffold",
             "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "phpcs": [
+            "phpcs -p --colors"
         ]
     },
     "extra": {

@@ -1,0 +1,32 @@
+name: Security workflow
+
+on:
+  push:
+  schedule:
+    - cron:  '0 13 * * *'
+
+jobs:
+  dependency-audit:
+    name: Dependency Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          composer install
+      - name: Check dependencies for vulnerabilities
+        run: |
+          composer security-check
+  code-check:
+    name: Static Code Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          composer install
+      - name: Run static code analysis
+        run: |
+          composer phpcs
