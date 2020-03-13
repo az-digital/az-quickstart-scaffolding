@@ -1,9 +1,9 @@
 name: Security workflow
 
 on:
-  push: {}
+  push:
   schedule:
-    - cron:  '30 17 * * *'
+    - cron:  '0 13 * * *'
 
 jobs:
   dependency-audit:
