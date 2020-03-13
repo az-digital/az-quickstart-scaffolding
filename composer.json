@@ -69,7 +69,7 @@
             "@composer drupal:scaffold",
             "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
-        "sniff": [
+        "phpcs": [
             "phpcs -p --colors"
         ]
     },
