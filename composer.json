@@ -21,7 +21,7 @@
         "az-digital/az_quickstart": "dev-master",
         "composer/installers": "1.7.0",
         "cweagans/composer-patches": "1.6.7",
-        "drupal/core-composer-scaffold": "8.8.2",
+        "drupal/core-composer-scaffold": "*",
         "drupal/console": "1.9.3",
         "drupal/console-dotenv": "0.3.1",
         "drush/drush": "9.7.1",
@@ -32,7 +32,7 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
-        "drupal/core-dev-pinned": "8.8.2",
+        "drupal/core-dev-pinned": "*",
         "mglaman/drupal-check": "1.1.0",
         "pheromone/phpcs-security-audit": "dev-master#1b8a61d4ac8f4f1554bcbf67865f8e1c1b213bdd",
         "sensiolabs/security-checker": "6.0.3"
