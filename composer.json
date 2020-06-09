@@ -14,6 +14,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/joeparsons/az-quickstart-dev.git"
         }
     ],
     "require": {
@@ -29,6 +33,9 @@
         "webflo/drupal-finder": "1.2.0",
         "webmozart/path-util": "2.3.0",
         "zaporylie/composer-drupal-optimizations": "1.0.0"
+    },
+    "require-dev": {
+        "az-digital/az-quickstart-dev": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"
