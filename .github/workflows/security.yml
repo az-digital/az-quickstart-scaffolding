@@ -26,7 +26,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          composer install
+          composer global require hirak/prestissimo
+          if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $GITHUB_REF | wc -l) = 1 ]; then PROFILE_BRANCH="$GITHUB_REF"; else PROFILE_BRANCH=master; fi
+          composer require --no-update az-digital/az_quickstart:dev-${PROFILE_BRANCH}
+          composer install -o
       - name: Run static code analysis
         run: |
           composer phpcs
