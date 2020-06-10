@@ -35,5 +35,5 @@ jobs:
       - name: Run static code analysis
         run: |
           set -ex
-          ls -la
+          tree web/profiles
           composer phpcs
