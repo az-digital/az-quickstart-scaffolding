@@ -35,5 +35,4 @@ jobs:
       - name: Run static code analysis
         run: |
           set -ex
-          find web/profiles -type f -ls
           composer phpcs
