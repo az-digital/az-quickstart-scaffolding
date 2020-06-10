@@ -35,4 +35,4 @@ jobs:
       - name: Run static code analysis
         run: |
           # composer phpcs
-          phpcs -p --colors --standard=web/profiles/custom/az_quickstart/phpcs.xml.dist
+          ./vendor/bin/phpcs -p --colors --standard=web/profiles/custom/az_quickstart/phpcs.xml.dist
