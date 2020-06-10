@@ -34,4 +34,5 @@ jobs:
           composer install -o
       - name: Run static code analysis
         run: |
-          composer phpcs
+          # composer phpcs
+          phpcs -p --colors --standard=web/profiles/custom/az_quickstart/phpcs.xml.dist
