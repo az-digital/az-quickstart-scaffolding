@@ -1,16 +1,15 @@
 name: az_quickstart
 recipe: drupal8
 config:
-  php: '7.2'
+  php: '7.3'
   via: apache:2.4
   webroot: web
   database: mysql:5.7
-  drush: ^9
   xdebug: false
 services:
   appserver:
-    build:
-      - composer global require hirak/prestissimo && composer install -o
+    composer:
+      hirak/prestissimo: ^0.3.9
 tooling:
   # Provide a command to install Drupal.
   # Current versions of the Bitnami MySQL container sometimes signal
