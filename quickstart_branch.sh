@@ -2,8 +2,8 @@
 #
 # Set the requested quickstart branch of the quickstart composer package.
 
-# Default to the master branch.
-BRANCH="master"
+# Default to the main branch.
+BRANCH="main"
 
 # Parse options
 while (( "$#" )); do
