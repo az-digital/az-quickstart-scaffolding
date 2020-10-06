@@ -31,7 +31,7 @@
         "zaporylie/composer-drupal-optimizations": "1.1.1"
     },
     "require-dev": {
-        "az-digital/az-quickstart-dev": "*"
+        "az-digital/az-quickstart-dev": "dev-bug/310"
     },
     "conflict": {
         "drupal/drupal": "*"
