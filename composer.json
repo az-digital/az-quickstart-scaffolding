@@ -28,7 +28,6 @@
         "drupal/console": "1.9.5",
         "drupal/console-dotenv": "0.3.1",
         "drupal/core-composer-scaffold": "*",
-        "drupal/drupal-library-installer-plugin": "^0.3",
         "drush/drush": "10.3.1",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "2.4.0",
@@ -97,11 +96,6 @@
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
-        },
-        "drupal-libraries": {
-          "libraries": [
-              {"name": "ace", "package": "npm-asset/ace-builds"}
-          ]
         },
         "drupal-scaffold": {
             "file-mapping": {
