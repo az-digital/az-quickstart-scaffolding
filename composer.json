@@ -14,6 +14,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/az-digital/phpcs-security-audit"
         }
     ],
     "require": {
@@ -21,15 +25,12 @@
         "az-digital/az_quickstart": "~2",
         "composer/installers": "1.9.0",
         "cweagans/composer-patches": "1.7.0",
-        "drupal/console": "1.9.5",
-        "drupal/console-dotenv": "0.3.1",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "10.3.1",
-        "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "2.4.0",
         "webflo/drupal-finder": "1.2.0",
         "webmozart/path-util": "2.3.0",
-        "zaporylie/composer-drupal-optimizations": "1.1.1"
+        "zaporylie/composer-drupal-optimizations": "1.2"
     },
     "require-dev": {
         "az-digital/az-quickstart-dev": "~1"
@@ -78,9 +79,7 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
+            "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
