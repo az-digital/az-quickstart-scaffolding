@@ -18,6 +18,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/az-digital/phpcs-security-audit"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -27,6 +31,7 @@
         "cweagans/composer-patches": "1.7.0",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "10.3.1",
+        "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "2.4.0",
         "webflo/drupal-finder": "1.2.0",
         "webmozart/path-util": "2.3.0",
@@ -77,9 +82,15 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "installer-types": [
+            "npm-asset"
+        ],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+               "type:drupal-library",
+               "type:npm-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -87,6 +98,7 @@
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+
         },
         "drupal-scaffold": {
             "file-mapping": {
