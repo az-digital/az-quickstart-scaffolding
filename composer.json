@@ -103,7 +103,6 @@
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
-
         },
         "drupal-scaffold": {
             "file-mapping": {
