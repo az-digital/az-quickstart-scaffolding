@@ -20,6 +20,10 @@
             "url": "https://github.com/az-digital/phpcs-security-audit"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/az-digital/drupal-library-installer-plugin"
+        },
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
@@ -30,6 +34,7 @@
         "composer/installers": "1.9.0",
         "cweagans/composer-patches": "1.7.0",
         "drupal/core-composer-scaffold": "*",
+        "drupal/drupal-library-installer-plugin": "dev-master as 0.3",
         "drush/drush": "10.3.1",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "2.4.0",
