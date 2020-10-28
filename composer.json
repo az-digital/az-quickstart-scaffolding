@@ -20,6 +20,10 @@
             "url": "https://github.com/az-digital/phpcs-security-audit"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/az-digital/drupal-libraries-installer-plugin"
+        },
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
