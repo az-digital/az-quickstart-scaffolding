@@ -3,7 +3,7 @@
 # Set the requested quickstart branch of the quickstart composer package.
 
 # Default to the main branch.
-BRANCH="main"
+BRANCH="2.0.x"
 
 # Parse options
 while (( "$#" )); do
@@ -28,7 +28,11 @@ while (( "$#" )); do
 done
 
 # Compute the expected composer package name of the requested branch.
-BRANCH="dev-${BRANCH}"
+if [[ $BRANCH =~ ^[0-9]\.[0-9] ]]; then
+  BRANCH="${BRANCH}-dev"
+else
+  BRANCH="dev-${BRANCH}"
+fi
 
 # Install and fetch dependencies for the requested branch
 composer require "az-digital/az_quickstart:$BRANCH"
