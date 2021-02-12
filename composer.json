@@ -51,9 +51,6 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
-        "security-check": [
-            "security-checker security:check"
-        ],
         "pre-install-cmd": [
             "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
