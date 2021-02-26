@@ -3,7 +3,7 @@
 APIVersion: v1.11.2
 type: drupal8
 docroot: web
-php_version: "7.2"
+php_version: "7.4"
 webserver_type: nginx-fpm
 
 # Default application ports
