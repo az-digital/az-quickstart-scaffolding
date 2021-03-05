@@ -35,4 +35,4 @@ else
 fi
 
 # Install and fetch dependencies for the requested branch
-composer require "az-digital/az_quickstart:$BRANCH"
+composer require --no-update "az-digital/az_quickstart:$BRANCH"
