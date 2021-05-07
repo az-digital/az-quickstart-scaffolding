@@ -101,6 +101,7 @@
             "npm-asset"
         ],
         "drupal-scaffold": {
+            "allowed-packages": ["az-digital/az_quickstart"],
             "file-mapping": {
                 "[project-root]/.editorconfig": {
                     "path": "web/core/assets/scaffold/files/editorconfig",
