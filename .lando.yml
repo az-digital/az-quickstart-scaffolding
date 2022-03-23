@@ -1,12 +1,28 @@
-name: az_quickstart
-recipe: drupal8
+name: az-quickstart-project
+recipe: drupal9
 config:
   php: '7.4'
   via: apache:2.4
   webroot: web
-  database: mysql:5.7
+  database: mariadb:10.4
   xdebug: false
 services:
+  # Replaces default lando MariaDB image with arm64 (Apple M1) compatible one.
+  # TODO: remove database service overrides once lando is updated.
+  database:
+    type: compose
+    services:
+      image: mariadb:10.4
+      command: docker-entrypoint.sh mariadbd
+      restart: always
+      ports:
+        - '3306'
+      environment:
+        MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'true'
+        MARIADB_DATABASE: drupal9
+        MYSQL_DATABASE: drupal9
+        MARIADB_USER: drupal9
+        MARIADB_PASSWORD: drupal9
   appserver:
     build:
       - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=main; fi; composer require --no-update drupal/core-recommended:* zaporylie/composer-drupal-optimizations:* az-digital/az_quickstart:dev-${PROFILE_BRANCH}
@@ -18,7 +34,7 @@ tooling:
   # in a race condition if Drupal is installed during the run phase.
   quickstart-install:
     service: appserver
-    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=lando --db-url=mysql://drupal8:drupal8@database:3306/drupal8 -y --verbose
+    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=lando --db-url=mysql://drupal8:drupal8@database:3306/drupal9 -y --verbose
   # Provide tooling to set the Quickstart dependency.
   quickstart-branch:
     service: appserver
@@ -36,4 +52,8 @@ tooling:
   # Provide Drush tooling to automatically know the Drupal root.
   drush:
     service: appserver
-    cmd: drush --root=/app/web
+    cmd: /app/vendor/bin/drush --root=/app/web
+  # Provide Drupal console tooling to automatically know the Drupal root.
+  drupal:
+    service: appserver
+    cmd: /app/vendor/bin/drupal --root=/app/web
