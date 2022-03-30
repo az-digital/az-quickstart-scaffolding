@@ -32,7 +32,7 @@ tooling:
   # Current versions of the Bitnami MySQL container sometimes signal
   # healthy before MySQL is fully started. This can result in MySQL errors
   # in a race condition if Drupal is installed during the run phase.
-  quickstart-install:
+  install:
     service: appserver
     cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=lando --db-url=mysql://drupal9:drupal9@database:3306/drupal9 -y --verbose
   # Provide tooling to set the Quickstart dependency.
@@ -57,3 +57,34 @@ tooling:
   drupal:
     service: appserver
     cmd: /app/vendor/bin/drupal --root=/app/web
+  # After running 'install' you can use this command prepare your lando site for migration.
+  migrate-setup:
+    service: appserver
+    cmd:
+      - /usr/bin/mysql -h database -uroot -e "CREATE DATABASE IF NOT EXISTS migrate; GRANT ALL PRIVILEGES ON migrate.* TO 'drupal9'@'%' IDENTIFIED by 'drupal9';"
+      - chmod 777 /app/web/sites/default/settings.php
+      - echo "\$databases['migrate']['default'] = [\n  'driver' => 'mysql',\n  'namespace' => 'Drupal\Core\Database\Driver\mysql',\n  'database' => 'migrate',\n  'username' => 'drupal9',\n  'password' => 'drupal9',\n  'port' => '3306',\n  'host' => 'database',\n  'prefix' => '',\n];" >> /app/web/sites/default/settings.php
+      - chmod 644 /app/web/sites/default/settings.php
+      - mkdir /app/web/sites/default/files/az_migrate
+      - /app/vendor/bin/drush --root=/app/web en -y az_migration az_carousel az_paragraphs_html
+      - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_public_path "sites/default/files/az_migrate"
+  # After running 'migrate-setup' you can use this command to import your
+  # database into the newly created migrate database.
+  'migrate-db-import <file>':
+    service: :host
+    description: YOU MUST RUN LANDO INSTALL FIRST Imports a migration site dump file into a database service
+    cmd: /bin/bash /app/scripts/lando/migrate-db-import.sh
+    user: root
+    options:
+      host:
+        description: The database service to use
+        default: database
+        alias:
+          - h
+      no-wipe:
+        description: Do not destroy the existing database before an import
+        boolean: true
+
+
+
+
