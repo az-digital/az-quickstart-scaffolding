@@ -10,3 +10,9 @@
   ```
   composer create-project az-digital/az-quickstart-scaffolding:2.0.x-dev azqs --no-interaction --no-dev
   ```
+
+
+# Migration setup in Lando
+
+Arizona Digital has added a [README for migrating into Quickstart
+2](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_migration/README.md).
