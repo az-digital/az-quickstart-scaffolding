@@ -65,7 +65,7 @@ tooling:
       - chmod 777 /app/web/sites/default/settings.php
       - echo "\$databases['migrate']['default'] = [\n  'driver' => 'mysql',\n  'namespace' => 'Drupal\Core\Database\Driver\mysql',\n  'database' => 'migrate',\n  'username' => 'drupal9',\n  'password' => 'drupal9',\n  'port' => '3306',\n  'host' => 'database',\n  'prefix' => '',\n];" >> /app/web/sites/default/settings.php
       - chmod 644 /app/web/sites/default/settings.php
-      - mkdir /app/web/sites/default/files/az_migrate
+      - mkdir /app/web/sites/default/files/migrate_files
       - /app/vendor/bin/drush --root=/app/web en -y az_migration az_carousel az_paragraphs_html
       - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_filebasepath " "
       - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_public_path "sites/default/files/az_migrate"
