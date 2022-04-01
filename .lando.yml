@@ -68,7 +68,7 @@ tooling:
       - mkdir /app/web/sites/default/files/migrate_files
       - /app/vendor/bin/drush --root=/app/web en -y az_migration az_carousel az_paragraphs_html
       - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_filebasepath " "
-      - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_public_path "sites/default/files/az_migrate"
+      - /app/vendor/bin/drush --root=/app/web cset -y az_migration.settings migrate_d7_public_path "sites/default/files/migrate_files"
   # After running 'migrate-setup' you can use this command to import your
   # database into the newly created migrate database.
   'migrate-db-import <file>':
