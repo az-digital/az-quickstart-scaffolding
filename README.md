@@ -58,5 +58,5 @@ drush pm-uninstall -y devel migrate_devel config_inspector
 
 Once uninstalled, dev dependencies can safely be removed with composer. 
 ```
-composer install --no-dev
+composer remove --dev
 ```
