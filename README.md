@@ -14,8 +14,7 @@
 
 # Migration setup in Lando
 
-Arizona Digital has added a [README for migrating into Quickstart
-2](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_migration/README.md).
+Arizona Digital has added a [README for migrating into Quickstart 2](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_migration/README.md).
 
 
 # Updating Quickstart
@@ -47,11 +46,6 @@ Importing distribution updates can be done via the command line:
 ```
 drush cd-update
 ```
-
-
-
-Chris Green  < 1 minute ago
-It works pretty well, but as you know, it is important to backup your database before running drush updbor drush cd-update
 
 # Launching your site
 
