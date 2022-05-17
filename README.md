@@ -16,7 +16,6 @@
 
 Arizona Digital has added a [README for migrating into Quickstart 2](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_migration/README.md).
 
-
 # Updating Quickstart
 
 Currently, Arizona Digital supports the two most recent [minor releases of Arizona Quickstart](https://github.com/az-digital/az_quickstart/blob/main/RELEASES.md).
