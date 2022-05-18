@@ -46,15 +46,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/installers": true,
-            "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal/console-extend-plugin": true,
-            "oomphinc/composer-installers-extender": true
-        }
+        "sort-packages": true
     },
     "autoload": {
         "classmap": [
@@ -80,6 +72,12 @@
         "phpcs": [
             "phpcs -p --colors --standard=web/profiles/custom/az_quickstart/phpcs.xml.dist"
         ]
+    },
+    "allow-plugins": {
+        "composer/installers": true,
+        "cweagans/composer-patches": true,
+        "drupal/core-composer-scaffold": true,
+        "oomphinc/composer-installers-extender": true
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
