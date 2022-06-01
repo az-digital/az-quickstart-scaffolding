@@ -43,7 +43,7 @@ drush -y state:set config_sync.update_mode 1 --input-format=integer
 ```
 Importing distribution updates can be done via the command line:
 ```
-drush cd-update
+drush config-distro-update
 ```
 
 # Launching your site
