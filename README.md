@@ -52,7 +52,7 @@ When you are ready to launch your site, you can remove dev dependencies included
 
 Example
 ```
-drush pm-uninstall -y devel migrate_devel config_inspector
+drush pm:uninstall -y devel migrate_devel config_inspector
 ```
 
 Once uninstalled, dev dependencies can safely be removed with composer. 
