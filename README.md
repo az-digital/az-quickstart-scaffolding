@@ -31,7 +31,7 @@ Once your site's codebase is up to date, it is important to run database updates
 
 Updating the database can be done via the command line:
 ```
-drush updb
+drush updatedb
 ```
 **Important** Always ensure your site is set on the correct strategy for importing distribution updates.
 For quickstart, it is recommended to use the merge strategy when importing distribution updates, which can be set via drush, or within the Admin UI.
