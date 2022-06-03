@@ -32,7 +32,7 @@
         "cweagans/composer-patches": "1.7.0",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "10.6.2",
-        "oomphinc/composer-installers-extender": "2.0.0",
+        "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.4.0",
         "webflo/drupal-finder": "1.2.2",
         "webmozart/path-util": "2.3.0"
