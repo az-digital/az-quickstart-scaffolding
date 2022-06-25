@@ -23,7 +23,7 @@ Currently, Arizona Digital supports the two most recent [minor releases of Arizo
 - `composer install` will install updates and pull in dev dependencies, and also apply patches if they exist.
 - `composer install  --no-dev` will install updates, and will remove dev dependencies, and also apply patches if they exist.
 - `composer update` is supposed to get the latest available based on the [version constraints](https://getcomposer.org/doc/articles/versions.md#summary) in your composer.json file, and also apply patches if they exist.
-- `composer require "az-digital/az_quickstart:2.4.0" --update-no-dev` Will pin to a specific version of quickstart without dev dependencies. You can update your site, incrementing the version number whenever you want to update, or use version constraints with `composer update --no-dev` to only update to a tagged version.
+- `composer require "az-digital/az_quickstart:2.4.0" --update-no-dev` Will pin to a specific version of Quickstart without dev dependencies. You can update your site, incrementing the version number whenever you want to update, or use version constraints with `composer update --no-dev` to only update to a tagged version.
 
 Once your site's codebase is up to date, it is important to run database updates and distribution updates.
 
