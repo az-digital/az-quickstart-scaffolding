@@ -36,7 +36,7 @@ drush updatedb
 **Important** Always ensure your site is set on the correct strategy for importing distribution updates.
 For Quickstart, it is recommended to use the merge strategy when importing distribution updates, which can be set via drush, or within the Admin UI.
 
-It is advisable that you familiarize yourself with the functionality of the [Config Distro](https://www.drupal.org/project/config_distro) module to get the most out of quickstart.
+It is advisable that you familiarize yourself with the functionality of the [Config Distro](https://www.drupal.org/project/config_distro) module to get the most out of Quickstart.
 
 ```
 drush -y state:set config_sync.update_mode 1 --input-format=integer
