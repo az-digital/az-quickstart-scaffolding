@@ -8,7 +8,7 @@
 - Utilizes [composer-installers](https://github.com/composer/installers) and [Drupal Composer Scaffold](https://github.com/drupal/core-composer-scaffold) plugins
 - Can be used as project template for composer [create-project command](https://getcomposer.org/doc/03-cli.md#create-project):
   ```
-  composer create-project az-digital/az-quickstart-scaffolding:2.0.x-dev azqs --no-interaction --no-dev
+  composer create-project az-digital/az-quickstart-scaffolding:2.2.x-dev azqs --no-interaction --no-dev
   ```
 
 
