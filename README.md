@@ -1,3 +1,9 @@
+# Notes
+
+If you are planning on pushing this site to Pantheon, you should use the
+[Pantheon scaffolding repository](https://github.com/az-digital/az-quickstart-pantheon),
+which has separate instructions.
+
 # Arizona Quickstart Scaffolding
 
 ![Security workflow](https://github.com/az-digital/az-quickstart-scaffolding/workflows/Security%20workflow/badge.svg)
