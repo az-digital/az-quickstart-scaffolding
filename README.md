@@ -1,7 +1,7 @@
 # Notes
 
 If you are planning on pushing this site to Pantheon, you should use the
-[Pantheon scaffolding repository](https://github.com/az-digital/az-quickstart-pantheon),
+[Pantheon upstream repository](https://github.com/az-digital/az-quickstart-pantheon) as your scaffolding repo,
 which has separate instructions.
 
 # Arizona Quickstart Scaffolding
