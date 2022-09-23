@@ -4,8 +4,8 @@ steps:
     plugin: Script
     script:
       - composer self-update
-      - if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=main; fi
-      - composer require --no-update drupal/core-recommended:* az-digital/az_quickstart:dev-${PROFILE_BRANCH}
+      - if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=2.5.x-dev; fi
+      - composer require --no-update drupal/core-recommended:* az-digital/az_quickstart:${PROFILE_BRANCH}
       - composer install -o
   - name: Install Arizona Quickstart
     plugin: Drupal
