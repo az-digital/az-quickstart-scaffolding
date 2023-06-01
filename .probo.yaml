@@ -1,4 +1,4 @@
-image: proboci/ubuntu:18.04-php7.4
+image: proboci/ubuntu:20.04-php8.1
 steps:
   - name: Build Arizona Quickstart
     plugin: Script
@@ -9,7 +9,7 @@ steps:
       - composer install -o
   - name: Install Arizona Quickstart
     plugin: Drupal
-    drupalVersion: 8
+    drupalVersion: 9
     subDirectory: web
     runInstall: true
     profileName: az_quickstart
