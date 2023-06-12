@@ -111,7 +111,7 @@
         ],
         "drupal-lenient": {
             "allowed-list": [
-                "drupal/background-image-formatter",
+                "drupal/background_image_formatter",
                 "drupal/migrate_devel",
                 "drupal/smart_title"
             ]
