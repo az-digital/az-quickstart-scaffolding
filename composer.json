@@ -31,7 +31,7 @@
         "composer/installers": "1.12.0",
         "cweagans/composer-patches": "1.7.3",
         "drupal/core-composer-scaffold": "*",
-        "drush/drush": "11.5.1",
+        "drush/drush": "11.6.0",
         "mglaman/composer-drupal-lenient": "1.0.3",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.6.9",
