@@ -67,19 +67,11 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "QuickstartProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
         "post-install-cmd": [
-            "@composer drupal:scaffold",
-            "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
+            "@composer drupal:scaffold"
         ],
         "post-update-cmd": [
-            "@composer drupal:scaffold",
-            "QuickstartProject\\composer\\ScriptHandler::createRequiredFiles"
+            "@composer drupal:scaffold"
         ],
         "phpcs": [
             "phpcs -p --colors --standard=web/profiles/custom/az_quickstart/phpcs.xml.dist"
