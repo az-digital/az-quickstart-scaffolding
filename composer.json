@@ -32,7 +32,6 @@
         "cweagans/composer-patches": "1.7.3",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "^11.6.0",
-        "mglaman/composer-drupal-lenient": "1.0.3",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.6.9",
         "webflo/drupal-finder": "1.2.2",
@@ -54,7 +53,6 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/console-extend-plugin": true,
-            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "phpstan/extension-installer": true,
             "zaporylie/composer-drupal-optimizations": true
@@ -102,13 +100,6 @@
             "bower-asset",
             "npm-asset"
         ],
-        "drupal-lenient": {
-            "allowed-list": [
-                "drupal/background_image_formatter",
-                "drupal/migrate_devel",
-                "drupal/smart_title"
-            ]
-        },
         "drupal-scaffold": {
             "allowed-packages": ["az-digital/az_quickstart"],
             "file-mapping": {
