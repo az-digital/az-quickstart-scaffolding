@@ -11,7 +11,7 @@ steps:
       - composer install -o
   - name: Install Arizona Quickstart
     plugin: Drupal
-    drupalVersion: 9
+    drupalVersion: 10
     subDirectory: web
     runInstall: true
     profileName: az_quickstart
