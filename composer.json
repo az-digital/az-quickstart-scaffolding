@@ -26,12 +26,12 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": ">=8.1",
         "az-digital/az_quickstart": "~2.6",
-        "composer/installers": "1.12.0",
+        "composer/installers": "2.2.0",
         "cweagans/composer-patches": "1.7.3",
         "drupal/core-composer-scaffold": "*",
-        "drush/drush": "11.5.1",
+        "drush/drush": "^11.6.0",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.6.9",
         "webflo/drupal-finder": "1.2.2",
@@ -50,11 +50,12 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
-            "zaporylie/composer-drupal-optimizations": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
             "drupal/console-extend-plugin": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "phpstan/extension-installer": true,
+            "zaporylie/composer-drupal-optimizations": true
         }
     },
     "autoload": {

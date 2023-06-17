@@ -1,7 +1,7 @@
 name: az-quickstart-project
-recipe: drupal9
+recipe: drupal10
 config:
-  php: '7.4'
+  php: '8.1'
   via: apache:2.4
   webroot: web
   database: mariadb:10.4
@@ -19,13 +19,14 @@ services:
         - '3306'
       environment:
         MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'true'
-        MARIADB_DATABASE: drupal9
-        MYSQL_DATABASE: drupal9
-        MARIADB_USER: drupal9
-        MARIADB_PASSWORD: drupal9
+        MARIADB_DATABASE: drupal10
+        MYSQL_DATABASE: drupal10
+        MARIADB_USER: drupal10
+        MARIADB_PASSWORD: drupal10
   appserver:
     build:
       - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=main; fi; composer require --no-update drupal/core-recommended:* zaporylie/composer-drupal-optimizations:* az-digital/az_quickstart:dev-${PROFILE_BRANCH}
+      - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az-quickstart-dev.git $BRANCH_NAME | wc -l) = 1 ]; then DEV_BRANCH="$BRANCH_NAME"; else DEV_BRANCH=main; fi; composer require --dev --no-update az-digital/az-quickstart-dev:dev-${DEV_BRANCH}
       - composer install -o
 tooling:
   # Provide a command to install Drupal.
@@ -34,7 +35,7 @@ tooling:
   # in a race condition if Drupal is installed during the run phase.
   install:
     service: appserver
-    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=azadmin --db-url=mysql://drupal9:drupal9@database:3306/drupal9 -y --verbose
+    cmd: drush --root=/app/web site:install --account-mail=noreply@email.arizona.edu --account-name=azadmin --account-pass=azadmin --db-url=mysql://drupal10:drupal10@database:3306/drupal10 -y --verbose
   # Provide tooling to set the Quickstart dependency.
   quickstart-branch:
     service: appserver
@@ -61,9 +62,9 @@ tooling:
   migrate-setup:
     service: appserver
     cmd:
-      - /usr/bin/mysql -h database -uroot -e "CREATE DATABASE IF NOT EXISTS migrate; GRANT ALL PRIVILEGES ON migrate.* TO 'drupal9'@'%' IDENTIFIED by 'drupal9';"
+      - /usr/bin/mysql -h database -uroot -e "CREATE DATABASE IF NOT EXISTS migrate; GRANT ALL PRIVILEGES ON migrate.* TO 'drupal10'@'%' IDENTIFIED by 'drupal10';"
       - chmod 777 /app/web/sites/default/settings.php
-      - echo "\$databases['migrate']['default'] = [\n  'driver' => 'mysql',\n  'namespace' => 'Drupal\Core\Database\Driver\mysql',\n  'database' => 'migrate',\n  'username' => 'drupal9',\n  'password' => 'drupal9',\n  'port' => '3306',\n  'host' => 'database',\n  'prefix' => '',\n];" >> /app/web/sites/default/settings.php
+      - echo "\$databases['migrate']['default'] = [\n  'driver' => 'mysql',\n  'namespace' => 'Drupal\Core\Database\Driver\mysql',\n  'database' => 'migrate',\n  'username' => 'drupal10',\n  'password' => 'drupal10',\n  'port' => '3306',\n  'host' => 'database',\n  'prefix' => '',\n];" >> /app/web/sites/default/settings.php
       - chmod 644 /app/web/sites/default/settings.php
       - mkdir /app/web/sites/default/files/migrate_files
       - /app/vendor/bin/drush --root=/app/web en -y az_migration az_carousel az_paragraphs_html
