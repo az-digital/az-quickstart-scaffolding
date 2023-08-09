@@ -47,6 +47,27 @@ purposes. Here's a guide to understanding which branch you should choose:
   This constraint ensures that the release branch will work with compatible
   versions of Quickstart that correspond to the compatible minor release branch,
   providing flexibility while maintaining alignment with the intended versions.
+### Feature or Issue Branches
+
+Feature or issue branches in this repository are typically created to make
+updates to the scaffolding to work with specific branches of
+`az-digital/az_quickstart`. When creating such a branch, it is customary to pin
+this repository's composer.json reference for `az-digital/az_quickstart` to a
+specific issue/feature branch that the changes are intended to work with. This
+ensures that the branch's changes align precisely with a particular state of the
+Quickstart project.
+
+These branches are useful for isolated development, testing of changes, or adding new features to the scaffolding that correspond to developments in the Quickstart project.
+
+**Notes**
+- Feature or issue branches may also be referred to as issue branches, depending
+  on the context or the specific workflow of the project.
+- These branches may not be as stable as the main or release branches, so use
+  them for development, experimentation, or testing rather than in production
+  environments.
+- The use of feature or issue branches in this repository is tightly aligned
+  with developments in the az-digital/az_quickstart project, and they should be
+  used in conjunction with the corresponding Quickstart branches.
 
 ### Using the `composer create-project` command:
 
@@ -62,7 +83,7 @@ specifications:
 If using any of the following commands, adjust `my_project_name` to your desired
 project directory name.
 
-1. **Using the Main Branch (`dev-main`)**:
+1. **Using the Main Branch (`main`)**:
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
 
@@ -72,9 +93,15 @@ project directory name.
    composer create-project az-digital/az-quickstart-scaffolding:2.8.x-dev my_project_name --no-interaction --no-dev
    ```
 
-3. **Using a Specific Release Branch (e.g., `2.7.x-dev`):**
+3. **Using a Specific Release Branch (e.g., `2.7.x`):**
   ```bash
   composer create-project az-digital/az-quickstart-scaffolding:2.7.x-dev my_project_name --no-interaction --no-dev
+  ```
+
+4. **Using an Issue or Feature Branch (e.g., `issue-45`)**
+
+  ```bash
+  composer create-project az-digital/az-quickstart-scaffolding:dev-issue/45 my_project_name --no-interaction --no-dev
   ```
 
 ## Migration setup in Lando
