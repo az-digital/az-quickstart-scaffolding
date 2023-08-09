@@ -60,9 +60,7 @@ Quickstart project.
 These branches are useful for isolated development, testing of changes, or adding new features to the scaffolding that correspond to developments in the Quickstart project.
 
 **Notes**
-- Feature or issue branches may also be referred to as issue branches, depending
-  on the context or the specific workflow of the project.
-- These branches may not be as stable as the main or release branches, so use
+- These branches are not as stable as the main or release branches, so use
   them for development, experimentation, or testing rather than in production
   environments.
 - The use of feature or issue branches in this repository is tightly aligned
