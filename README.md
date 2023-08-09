@@ -20,7 +20,7 @@ purposes. Here's a guide to understanding which branch you should choose:
 ### Main Branch (`dev-main`)
 
 - **Purpose**: The main branch contains all the latest features and changes. It
-  represents the cutting-edge development but may be less stable than specific
+  represents the cutting-edge development and may be less stable than specific
   release branches. You can use it with `dev-main` or an alias for the latest
   unreleased version (e.g., `2.8.x`).
 - **When to Use**: Choose this branch if you want access to the very latest
