@@ -99,7 +99,7 @@ project directory name.
 4. **Using an Issue or Feature Branch (e.g., `issue-45`)**
 
   ```bash
-  composer create-project az-digital/az-quickstart-scaffolding:dev-issue/45 my_project_name --no-interaction --no-dev
+  composer create-project az-digital/az-quickstart-scaffolding:dev-issue/45 my_project_name --no-interaction
   ```
 
 ## Migration setup in Lando
