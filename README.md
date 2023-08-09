@@ -60,6 +60,7 @@ Quickstart project.
 These branches are useful for isolated development, testing of changes, or adding new features to the scaffolding that correspond to developments in the Quickstart project.
 
 **Notes**
+- If developing a feature for `az-digital/az_quickstart`, use the provided build tools (DDev or Lando) instead of running `composer create-project` directly.
 - These branches are not as stable as the main or release branches, so use
   them for development, experimentation, or testing rather than in production
   environments.
