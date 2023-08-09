@@ -47,7 +47,6 @@ Here are some examples of how you might use this command with different branch s
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
 
-
 2. **Using the Latest Unreleased Version Alias (`2.8.x`):**
 
    ```bash
