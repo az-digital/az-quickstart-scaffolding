@@ -46,6 +46,7 @@ purposes. Here's a guide to understanding which branch you should choose:
   This constraint ensures that the release branch will work with compatible
   versions of Quickstart that correspond to the compatible minor release branch,
   providing flexibility while maintaining alignment with the intended versions.
+
 ### Feature or Issue Branches
 
 Feature or issue branches in this repository are typically created to make
