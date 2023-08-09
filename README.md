@@ -14,12 +14,19 @@ If you are planning on pushing this site to Pantheon, you should use the
 which has separate instructions.
 
 ## Choosing the Right Branch for Your Quickstart Project
-In the Arizona Quickstart Scaffolding project, different branches serve various purposes. Here's a guide to understanding which branch you should choose:
+In the Arizona Quickstart Scaffolding project, different branches serve various
+purposes. Here's a guide to understanding which branch you should choose:
 
 ### Main Branch (`dev-main`, `2.8.x`)
 
-- **Purpose**: The main branch contains all the latest features and changes. It represents the cutting-edge development but may be less stable than specific release branches. You can use it with `dev-main` or an alias for the latest unreleased version (e.g., `2.8.x`).
-- **When to Use**: Choose this branch if you want access to the very latest features, and you are willing to work with potentially less-tested code. Ideal for development, experimentation, or testing new functionalities.
+- **Purpose**: The main branch contains all the latest features and changes. It
+  represents the cutting-edge development but may be less stable than specific
+  release branches. You can use it with `dev-main` or an alias for the latest
+  unreleased version (e.g., `2.8.x`).
+- **When to Use**: Choose this branch if you want access to the very latest
+  features, and you are willing to work with potentially less-tested code. Ideal
+  for development, experimentation, or testing new functionalities.
+
 
 ### Release Branches (e.g., `2.5.x`, `2.6.x`, `2.7.x`)
 
@@ -43,12 +50,17 @@ In the Arizona Quickstart Scaffolding project, different branches serve various 
 
 ### Using the `composer create-project` command:
 
-With Composer's `create-project` command, you can quickly scaffold a new project using the Arizona Quickstart Scaffolding. Each `az-quickstart-scaffolding` branch coincides with an `az_quickstart` branch, ensuring compatibility and alignment between the scaffolding and the core project.
+With Composer's `create-project` command, you can quickly scaffold a new project
+using the Arizona Quickstart Scaffolding. Each `az-quickstart-scaffolding`
+branch coincides with an `az_quickstart` branch, ensuring compatibility and
+alignment between the scaffolding and the core project.
 
-Here are some examples of how you might use this command with different branch specifications:
 
-If using any of the following commands, adjust `my_project_name` to your desired project directory name.
+Here are some examples of how you might use this command with different branch
+specifications:
 
+If using any of the following commands, adjust `my_project_name` to your desired
+project directory name.
 
 1. **Using the Main Branch (`dev-main`)**:
    ```bash
@@ -68,6 +80,7 @@ If using any of the following commands, adjust `my_project_name` to your desired
 ## Migration setup in Lando
 
 Arizona Digital has added a [README for migrating into Quickstart 2](https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_migration/README.md).
+
 
 ## Updating Quickstart
 
