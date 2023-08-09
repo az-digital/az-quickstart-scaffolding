@@ -72,7 +72,7 @@ project directory name.
    composer create-project az-digital/az-quickstart-scaffolding:2.8.x-dev my_project_name --no-interaction --no-dev
    ```
 
-3. **Using a Specific Release Branch (e.g., `2.7.dev`):**
+3. **Using a Specific Release Branch (e.g., `2.7.x-dev`):**
   ```bash
   composer create-project az-digital/az-quickstart-scaffolding:2.7.x-dev my_project_name --no-interaction --no-dev
   ```
