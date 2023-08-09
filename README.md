@@ -21,7 +21,7 @@ In the Arizona Quickstart Scaffolding project, different branches serve various 
 - **Purpose**: The main branch contains all the latest features and changes. It represents the cutting-edge development but may be less stable than specific release branches. You can use it with `dev-main` or an alias for the latest unreleased version (e.g., `2.8.x`).
 - **When to Use**: Choose this branch if you want access to the very latest features, and you are willing to work with potentially less-tested code. Ideal for development, experimentation, or testing new functionalities.
 
-### Release Branches (e.g., `2.7.x-dev`, `2.6.x-dev`)
+### Release Branches (e.g., `2.5.x`, `2.6.x`, `2.7.x`)
 
 - **Purpose**: Release branches, named in the format of `2.x.x-dev`, are created
   for specific versions of the project and are considered stable and
@@ -35,7 +35,11 @@ In the Arizona Quickstart Scaffolding project, different branches serve various 
   one of these ensures that you receive updates, security patches, and support
   aligned with your system's requirements, avoiding potential conflicts and
   achieving a robust and reliable implementation.
-
+- **Version Constraints in Supported Release Branches**: Each supported release
+  branch in this repository specifies a version constraint for az_quickstart in composer.json.
+  This constraint ensures that the release branch will work with compatible
+  versions of Quickstart that correspond to the compatible minor release branch,
+  providing flexibility while maintaining alignment with the intended versions.
 
 ### Using the `composer create-project` command:
 
@@ -43,7 +47,7 @@ With Composer's `create-project` command, you can quickly scaffold a new project
 
 Here are some examples of how you might use this command with different branch specifications:
 
-If using and of the following commands, adjust `my_project_name` to your desired project directory name.
+If using any of the following commands, adjust `my_project_name` to your desired project directory name.
 
 
 1. **Using the Main Branch (`dev-main`)**:
