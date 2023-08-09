@@ -43,6 +43,9 @@ With Composer's `create-project` command, you can quickly scaffold a new project
 
 Here are some examples of how you might use this command with different branch specifications:
 
+If using and of the following commands, adjust `my_project_name` to your desired project directory name.
+
+
 1. **Using the Main Branch (`dev-main`)**:
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
