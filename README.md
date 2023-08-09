@@ -48,20 +48,16 @@ Here are some examples of how you might use this command with different branch s
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
 
 
-  ```
-  composer create-project az-digital/az-quickstart-scaffolding:2.5.x-dev azqs --no-interaction --no-dev
-  ```
-
 2. **Using the Latest Unreleased Version Alias (`2.8.x`):**
 
-```
-composer create-project az-digital/az-quickstart-scaffolding:2.8.x-dev my_project_name --no-interaction --no-dev
-```
+   ```bash
+   composer create-project az-digital/az-quickstart-scaffolding:2.8.x-dev my_project_name --no-interaction --no-dev
+   ```
 
 3. **Using a Specific Release Branch (e.g., `2.7.dev`):**
-```
-composer create-project az-digital/az-quickstart-scaffolding:2.7.x-dev my_project_name --no-interaction --no-dev
-```
+  ```bash
+  composer create-project az-digital/az-quickstart-scaffolding:2.7.x-dev my_project_name --no-interaction --no-dev
+  ```
 
 ## Migration setup in Lando
 
