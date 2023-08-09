@@ -17,7 +17,7 @@ which has separate instructions.
 In the Arizona Quickstart Scaffolding project, different branches serve various
 purposes. Here's a guide to understanding which branch you should choose:
 
-### Main Branch (`dev-main`, `2.8.x`)
+### Main Branch (`dev-main`)
 
 - **Purpose**: The main branch contains all the latest features and changes. It
   represents the cutting-edge development but may be less stable than specific
