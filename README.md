@@ -27,7 +27,6 @@ purposes. Here's a guide to understanding which branch you should choose:
   features, and you are willing to work with potentially less-tested code. Ideal
   for development, experimentation, or testing new functionalities.
 
-
 ### Release Branches (e.g., `2.5.x`, `2.6.x`, `2.7.x`)
 
 - **Purpose**: Release branches, named in the format of `2.x.x-dev`, are created
