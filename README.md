@@ -25,7 +25,7 @@ purposes. Here's a guide to understanding which branch you should choose:
   unreleased version (e.g., `2.8.x`).
 - **When to Use**: Choose this branch if you want access to the very latest
   features, and you are willing to work with potentially less-tested code. Ideal
-  for development, experimentation, or testing new functionalities.
+  for development, experimentation, or testing unreleased functionality.
 
 ### Release Branches (e.g., `2.5.x`, `2.6.x`, `2.7.x`)
 
