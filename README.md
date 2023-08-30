@@ -1,5 +1,10 @@
 # Arizona Quickstart Scaffolding
 
+## Notes
+If you are planning on pushing this site to Pantheon, you should use the
+[Pantheon upstream repository](https://github.com/az-digital/az-quickstart-pantheon) as your scaffolding repo,
+which has separate instructions.
+
 ![Security workflow](https://github.com/az-digital/az-quickstart-scaffolding/workflows/Security%20workflow/badge.svg)
 
 - Designed to build a Quickstart website/project codebase
@@ -7,11 +12,6 @@
 - Installs Drupal in a `web` subdirectory
 - Utilizes [composer-installers](https://github.com/composer/installers) and [Drupal Composer Scaffold](https://github.com/drupal/core-composer-scaffold) plugins
 - Can be used as project template for composer [create-project command](https://getcomposer.org/doc/03-cli.md#create-project):
-
-## Notes
-If you are planning on pushing this site to Pantheon, you should use the
-[Pantheon upstream repository](https://github.com/az-digital/az-quickstart-pantheon) as your scaffolding repo,
-which has separate instructions.
 
 ## Choosing the Right Branch for Your Quickstart Project
 In the Arizona Quickstart Scaffolding project, different branches serve various
