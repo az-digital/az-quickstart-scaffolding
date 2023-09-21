@@ -82,7 +82,7 @@ specifications:
 If using any of the following commands, adjust `my_project_name` to your desired
 project directory name.
 
-- **Using the Main Branch (`main`)**:
+- **Using the Main Branch (`main`) with dev dependencies**:
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
 
