@@ -86,18 +86,18 @@ project directory name.
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
 
-2. **Using the Latest Unreleased Version Alias (`2.8.x`):**
+- **Using the Latest Unreleased Version Alias (`2.8.x`):**
 
    ```bash
    composer create-project az-digital/az-quickstart-scaffolding:2.8.x-dev my_project_name --no-interaction --no-dev
    ```
 
-3. **Using a Specific Release Branch (e.g., `2.7.x`):**
+- **Using a Specific Release Branch (e.g., `2.7.x`):**
   ```bash
   composer create-project az-digital/az-quickstart-scaffolding:2.7.x-dev my_project_name --no-interaction --no-dev
   ```
 
-4. **Using an Issue or Feature Branch (e.g., `issue-45`)**
+- **Using an Issue or Feature Branch (e.g., `issue-45`)**
 
   ```bash
   composer create-project az-digital/az-quickstart-scaffolding:dev-issue/45 my_project_name --no-interaction
