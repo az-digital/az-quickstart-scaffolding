@@ -84,7 +84,7 @@ project directory name.
 
 - **Using the Main Branch (`main`) with dev dependencies**:
    ```bash
-   composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction --no-dev
+   composer create-project az-digital/az-quickstart-scaffolding:dev-main my_project_name --no-interaction
 
 - **Using the Latest Unreleased Version Alias (`2.8.x`):**
 
