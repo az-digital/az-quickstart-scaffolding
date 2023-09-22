@@ -11,7 +11,7 @@ which has separate instructions.
 - Includes [Quickstart](https://github.com/az-digital/az_quickstart) as dependency
 - Installs Drupal in a `web` subdirectory
 - Utilizes [composer-installers](https://github.com/composer/installers) and [Drupal Composer Scaffold](https://github.com/drupal/core-composer-scaffold) plugins
-- Can be used as project template for composer [create-project command](https://getcomposer.org/doc/03-cli.md#create-project):
+- Can be used as a project template for the composer [create-project command](https://getcomposer.org/doc/03-cli.md#create-project)
 
 ## Choosing the Right Branch for Your Quickstart Project
 In the Arizona Quickstart Scaffolding project, different branches serve various
