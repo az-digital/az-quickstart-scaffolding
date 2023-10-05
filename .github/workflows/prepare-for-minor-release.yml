@@ -31,7 +31,6 @@ jobs:
         run: |
           git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
 
-
       # - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
       #   run: |
       #     git checkout main
