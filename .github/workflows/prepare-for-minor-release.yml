@@ -64,6 +64,13 @@ jobs:
           git add quickstart_branch.sh
           git add .lando.yml
           git add .probo.yaml
+          
+      - name: Add composer.json change to commit for release branch PR
+        run: |
+          git diff
+          git add composer.json
+          git diff
+          git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.this_release_branch_alias_constraint }}"
           git diff main
 
       - name: Checkout az-quickstart-scaffolding
