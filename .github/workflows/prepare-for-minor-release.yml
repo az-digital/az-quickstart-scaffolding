@@ -8,12 +8,10 @@ jobs:
   prepare_for_new_minor_release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout az-quickstart-scaffolding
-        uses: actions/checkout@v4
-
-      - name: Create new branch so we can make a pull request against `main`
+      - name: Set up git
         run: |
-          git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
       - name: Setup PHP with composer v2
         uses: shivammathur/setup-php@v2
@@ -21,30 +19,38 @@ jobs:
           php-version: '8.1'
           tools: composer:v2
         
+      - name: Checkout az-quickstart-scaffolding
+        uses: actions/checkout@v4
+
+      - name: Create new release branch and pushing it back to the repo.
+        run: |
+          git checkout -b ${{ github.event.client_payload.release_branch_name }}
+          # git push -u origin ${{ github.event.client_payload.release_branch_name }}
+
+      - name: Create new branch so we can make a pull request against `${{ github.event.client_payload.release_branch_name }}`
+        run: |
+          git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+
       - name: Update the az-digital/az_quickstart composer.json requirement
         run: | 
-          composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
-
-      - name: Set up git
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          composer require az-digital/az_quickstart ${{ github.event.client_payload.this_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
 
       - name: Add composer.json change to commit for main branch PR
         run: |
           git diff
           git add composer.json
-          git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.next_release_branch_alias_constraint }}"
+          git diff
+          git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.this_release_branch_alias_constraint }}"
 
-      - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
-        run: |
-          git checkout main
-          git merge ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
-          git checkout -b ${{ github.event.client_payload.release_branch_name }}
+      # - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
+      #   run: |
+      #     git checkout main
+      #     git merge ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+      #     git checkout -b ${{ github.event.client_payload.release_branch_name }}
 
-      - name: Check out new branch so we can make a pull request
-        run: |
-          git checkout -b ${{ github.event.client_payload.release_branch_name }}-ONLY-prepare-for-minor-release
+      # - name: Check out new branch so we can make a pull request
+      #   run: |
+      #     git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
 
       - name: Update quickstart_branch.sh in release branch
         run: |
@@ -68,6 +74,20 @@ jobs:
           git add quickstart_branch.sh
           git add .lando.yml
           git add .probo.yaml
+
+      - name: Checkout az-quickstart-scaffolding
+        uses: actions/checkout@v4
+
+      - name: Update the az-digital/az_quickstart composer.json requirement on main branch
+        run: | 
+          composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
+
+      - name: Add composer.json change to commit for main branch PR
+        run: |
+          git diff
+          git add composer.json
+          git diff
+          git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.next_release_branch_alias_constraint }}"
 
       # - name: Push required changes to new branch so we can make a pull request
       #   uses: peter-evans/create-pull-request@v5
