@@ -31,16 +31,6 @@ jobs:
         run: |
           git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
 
-      - name: Update the az-digital/az_quickstart composer.json requirement
-        run: | 
-          composer require az-digital/az_quickstart ${{ github.event.client_payload.this_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
-
-      - name: Add composer.json change to commit for main branch PR
-        run: |
-          git diff
-          git add composer.json
-          git diff
-          git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.this_release_branch_alias_constraint }}"
 
       # - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
       #   run: |
