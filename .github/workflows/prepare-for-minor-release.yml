@@ -75,7 +75,10 @@ jobs:
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
-
+      - name: Create branch from main to prepare for release
+        run: |
+          git checkout -b prepare-main-for-${{ github.event.client_payload.release_branch_name }}
+          # git push -u origin ${{ github.event.client_payload.release_branch_name }}
       - name: Update the az-digital/az_quickstart composer.json requirement on main branch
         run: | 
           composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
