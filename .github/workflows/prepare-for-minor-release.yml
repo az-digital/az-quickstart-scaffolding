@@ -18,10 +18,15 @@ jobs:
         run: |
           git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
 
-      - name: Update the az-digital/az_quickstart composer.json requirement
-        uses: php-actions/composer@v6
+      - name: Setup PHP with composer v2
+        uses: shivammathur/setup-php@v2
         with:
-          command: require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
+          php-version: '8.1'
+          tools: composer:v2
+        
+      - name: Update the az-digital/az_quickstart composer.json requirement
+        run: | 
+          composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
 
       - name: Set up git
         run: |
