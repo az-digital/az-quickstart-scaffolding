@@ -95,6 +95,6 @@ jobs:
       #   with:
       #     title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
       #     commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     branch: ${{ inputs.release_branch_name }}-prepare-for-minor-release
-      #     base: ${{ inputs.release_branch_name }}
+      #     branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
+      #     base: main
       #     delete-branch: true
