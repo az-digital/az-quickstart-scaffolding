@@ -10,9 +10,6 @@ jobs:
     steps:
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
-        with:
-          repository: az-digital/az-quickstart-scaffolding
-          ref: main
 
       - name: Create new branch so we can make a pull request against `main`
         run: |
