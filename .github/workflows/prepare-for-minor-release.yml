@@ -74,6 +74,7 @@ jobs:
           git add quickstart_branch.sh
           git add .lando.yml
           git add .probo.yaml
+          git diff main
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
