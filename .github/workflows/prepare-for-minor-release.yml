@@ -34,15 +34,6 @@ jobs:
           git add composer.json
           git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.next_release_branch_alias_constraint }}"
 
-      # - name: Push required changes to new branch so we can make a pull request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     branch: ${{ inputs.release_branch_name }}-prepare-for-minor-release
-      #     base: ${{ inputs.release_branch_name }}
-      #     delete-branch: true
-
       - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
         run: |
           git checkout main
