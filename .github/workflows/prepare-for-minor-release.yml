@@ -81,7 +81,6 @@ jobs:
       #     base: ${{ github.event.client_payload.release_branch_name }}
       #     delete-branch: true
 
-
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
       - name: Create branch from main to prepare for release
