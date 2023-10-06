@@ -31,16 +31,6 @@ jobs:
         run: |
           git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
 
-      # - name: Merge `${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release` branch changes into `main`, then create new release branch
-      #   run: |
-      #     git checkout main
-      #     git merge ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
-      #     git checkout -b ${{ github.event.client_payload.release_branch_name }}
-
-      # - name: Check out new branch so we can make a pull request
-      #   run: |
-      #     git checkout -b ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
-
       - name: Update quickstart_branch.sh in release branch
         run: |
           NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
@@ -83,6 +73,7 @@ jobs:
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
+        
       - name: Create branch from main to prepare for release
         run: |
           git checkout -b prepare-main-for-${{ github.event.client_payload.release_branch_name }}
