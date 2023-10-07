@@ -62,14 +62,14 @@ jobs:
           git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.this_release_branch_alias_constraint }}"
           git diff main
 
-      # - name: Push required changes to new branch so we can make a pull request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     branch: ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
-      #     base: ${{ github.event.client_payload.release_branch_name }}
-      #     delete-branch: true
+      - name: Push required changes to new branch so we can make a pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          branch: ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+          base: ${{ github.event.client_payload.release_branch_name }}
+          delete-branch: true
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
@@ -89,11 +89,11 @@ jobs:
           git diff
           git commit -m "Update Quickstart version constraint to ${{ github.event.client_payload.next_release_branch_alias_constraint }}"
 
-      # - name: Push required changes to new branch so we can make a pull request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-      #     branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
-      #     base: main
-      #     delete-branch: true
+      - name: Push required changes to new branch so we can make a pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
+          base: main
+          delete-branch: true
