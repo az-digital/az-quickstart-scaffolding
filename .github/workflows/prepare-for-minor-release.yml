@@ -51,6 +51,7 @@ jobs:
           branch: ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
           base: ${{ github.event.client_payload.release_branch_name }}
           delete-branch: true
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           add-paths: |
             quickstart_branch.sh
             .lando.yml
@@ -72,5 +73,6 @@ jobs:
           branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
           base: main
           delete-branch: true
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           add-paths: |
             composer.json
