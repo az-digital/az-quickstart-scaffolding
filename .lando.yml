@@ -25,7 +25,7 @@ services:
         MARIADB_PASSWORD: drupal10
   appserver:
     build:
-      - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=main; fi; composer require --no-update drupal/core-recommended:* zaporylie/composer-drupal-optimizations:* az-digital/az_quickstart:dev-${PROFILE_BRANCH}
+      - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az_quickstart.git $BRANCH_NAME | wc -l) = 1 ]; then PROFILE_BRANCH="$BRANCH_NAME"; else PROFILE_BRANCH=2.8.x; fi; composer require --no-update drupal/core-recommended:* zaporylie/composer-drupal-optimizations:* az-digital/az_quickstart:dev-${PROFILE_BRANCH}
       - BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); if [ $(git ls-remote --heads https://github.com/az-digital/az-quickstart-dev.git $BRANCH_NAME | wc -l) = 1 ]; then DEV_BRANCH="$BRANCH_NAME"; else DEV_BRANCH=main; fi; composer require --dev --no-update az-digital/az-quickstart-dev:dev-${DEV_BRANCH}
       - composer install -o
 tooling:
@@ -48,7 +48,7 @@ tooling:
         interactive:
           type: input
           message: Branch to use, e.g. UADIGITAL-1234.
-          default: main
+          default: 2.8.x
           weight: 600
   # Provide Drush tooling to automatically know the Drupal root.
   drush:
