@@ -1,0 +1,78 @@
+name: Prepare for minor release
+run-name: Update az-quickstart-scaffolding repository for new `${{ github.event.client_payload.release_branch_name }}` minor release branch.
+on:
+  repository_dispatch:
+    types: az_quickstart_prep_for_minor_release
+
+jobs:
+  prepare_for_new_minor_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP with composer v2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+
+      - name: Checkout az-quickstart-scaffolding
+        uses: actions/checkout@v4
+
+      - name: Set up git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: Create new release branch and push it back to the repo.
+        run: |
+          git checkout -b ${{ github.event.client_payload.release_branch_name }}
+          git push -u origin ${{ github.event.client_payload.release_branch_name }}
+
+      - name: Update quickstart_branch.sh in release branch
+        run: |
+          NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
+          sed -i "s/BRANCH=main/BRANCH=$NEW_VERSION/g" quickstart_branch.sh
+
+      - name: Update Lando config in release branch
+        run: |
+          NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
+          sed -i "s/PROFILE_BRANCH=main/PROFILE_BRANCH=$NEW_VERSION/g" .lando.yml
+          sed -i "s/default: main/default: $NEW_VERSION/g" .lando.yml
+
+      - name: Update Probo config in release branch
+        run: |
+          NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
+          sed -i "s/PROFILE_BRANCH=main/PROFILE_BRANCH=$NEW_VERSION/g" .probo.yaml
+
+      - name: Push required changes to new branch so we can make a pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          branch: ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+          base: ${{ github.event.client_payload.release_branch_name }}
+          delete-branch: true
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          add-paths: |
+            quickstart_branch.sh
+            .lando.yml
+            .probo.yaml
+            composer.json
+            
+      - name: Checkout az-quickstart-scaffolding
+        uses: actions/checkout@v4
+        
+      - name: Update the az-digital/az_quickstart composer.json requirement on main branch
+        run: |
+          composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
+
+      - name: Push required changes to new branch so we can make a pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
+          base: main
+          delete-branch: true
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          add-paths: |
+            composer.json
