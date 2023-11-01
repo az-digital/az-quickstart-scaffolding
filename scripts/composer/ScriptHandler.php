@@ -13,7 +13,6 @@ use Drupal\Core\Site\Settings;
 use Drupal\Core\Site\SettingsEditor;
 use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
-use Webmozart\PathUtil\Path;
 
 class ScriptHandler {
 
@@ -44,7 +43,7 @@ class ScriptHandler {
       require_once $drupalRoot . '/core/includes/install.inc';
       new Settings([]);
       $settings['settings']['config_sync_directory'] = (object) [
-        'value' => Path::makeRelative($drupalFinder->getComposerRoot() . '/config/sync', $drupalRoot),
+        'value' => $fs->makePathRelative($drupalFinder->getComposerRoot() . '/config/sync', $drupalRoot),
         'required' => TRUE,
       ];
       SettingsEditor::rewrite($drupalRoot . '/sites/default/settings.php', $settings);
