@@ -31,7 +31,7 @@
         "composer/installers": "2.2.0",
         "cweagans/composer-patches": "1.7.3",
         "drupal/core-composer-scaffold": "*",
-        "drush/drush": "^12.1.0",
+        "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.6.9",
         "webflo/drupal-finder": "1.2.2"
@@ -53,6 +53,7 @@
             "drupal/core-composer-scaffold": true,
             "drupal/console-extend-plugin": true,
             "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "zaporylie/composer-drupal-optimizations": true
         }
