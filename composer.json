@@ -30,7 +30,7 @@
         "az-digital/az_quickstart": "~2.7",
         "composer/installers": "2.2.0",
         "cweagans/composer-patches": "1.7.3",
-        "drupal/core-composer-scaffold": "*",
+        "drupal/core-composer-scaffold": "^10.0",
         "drush/drush": "^11.6.0",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "2.6.9",
