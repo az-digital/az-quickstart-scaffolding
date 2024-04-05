@@ -48,7 +48,7 @@ jobs:
         with:
           title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
           commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-          branch: ${{ github.event.client_payload.release_branch_name }}-prepare-for-minor-release
+          branch: prepare-${{ github.event.client_payload.release_branch_name }}-for-minor-release
           base: ${{ github.event.client_payload.release_branch_name }}
           delete-branch: true
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
@@ -57,10 +57,10 @@ jobs:
             .lando.yml
             .probo.yaml
             composer.json
-            
+
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
-        
+
       - name: Update the az-digital/az_quickstart composer.json requirement on main branch
         run: |
           composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
