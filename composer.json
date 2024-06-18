@@ -54,8 +54,7 @@
             "drupal/console-extend-plugin": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true,
-            "zaporylie/composer-drupal-optimizations": true
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
