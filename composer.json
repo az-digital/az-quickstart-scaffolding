@@ -37,7 +37,8 @@
         "webflo/drupal-finder": "1.2.2"
     },
     "require-dev": {
-        "az-digital/az-quickstart-dev": "~1"
+        "az-digital/az-quickstart-dev": "~1",
+        "drupal/core-dev": "^10.2"
     },
     "conflict": {
         "drupal/drupal": "*"
