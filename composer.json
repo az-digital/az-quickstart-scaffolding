@@ -30,14 +30,15 @@
         "az-digital/az_quickstart": "~2.11",
         "composer/installers": "2.3.0",
         "cweagans/composer-patches": "1.7.3",
-        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-composer-scaffold": "^10.3",
         "drush/drush": "^12.4.3",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "5.6.0",
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
-        "az-digital/az-quickstart-dev": "~1"
+        "az-digital/az-quickstart-dev": "~1",
+        "drupal/core-dev": "^10.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -51,11 +52,9 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/console-extend-plugin": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true,
-            "zaporylie/composer-drupal-optimizations": true
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
