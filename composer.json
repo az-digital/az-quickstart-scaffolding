@@ -38,7 +38,7 @@
     },
     "require-dev": {
         "az-digital/az-quickstart-dev": "~1",
-        "drupal/core-dev": "~10.2.0"
+        "drupal/core-dev": "~10.2"
     },
     "conflict": {
         "drupal/drupal": "*"
