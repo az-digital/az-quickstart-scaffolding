@@ -1,4 +1,4 @@
-image: proboci/ubuntu:20.04-php8.1
+image: proboci/ubuntu:22.04-php8.3
 steps:
   - name: Build Arizona Quickstart
     plugin: Script
