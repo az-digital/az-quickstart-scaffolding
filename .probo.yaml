@@ -15,5 +15,5 @@ steps:
     subDirectory: web
     runInstall: true
     profileName: az_quickstart
-    installArgs: "--site-name='Quickstart Review' --account-name=azadmin --account-pass=azadmin2024 --verbose --yes -n"
+    installArgs: "--site-name='Quickstart Review' --account-name=azadmin --account-pass=azadmin2025 --verbose --yes -n"
     cliDefines: {DRUSH_LAUNCHER_FALLBACK: '$SRC_DIR/vendor/bin/drush'}
