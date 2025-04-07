@@ -155,12 +155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/az-digital/az_quickstart.git",
-                "reference": "d2914f59ad10d54aa6675f5d046b6d63f4e01ade"
+                "reference": "0c3b56ea6f22eee868561fdd4ee41e038d32d287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/az-digital/az_quickstart/zipball/d2914f59ad10d54aa6675f5d046b6d63f4e01ade",
-                "reference": "d2914f59ad10d54aa6675f5d046b6d63f4e01ade",
+                "url": "https://api.github.com/repos/az-digital/az_quickstart/zipball/0c3b56ea6f22eee868561fdd4ee41e038d32d287",
+                "reference": "0c3b56ea6f22eee868561fdd4ee41e038d32d287",
                 "shasum": ""
             },
             "require": {
@@ -440,7 +440,7 @@
             "support": {
                 "docs": "https://quickstart.arizona.edu/help"
             },
-            "time": "2025-04-07T18:34:43+00:00"
+            "time": "2025-04-07T19:17:41+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
