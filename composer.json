@@ -10,24 +10,29 @@
             "role": "Team"
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "az_quickstart": {
+            "type": "vcs",
+            "url": "https://github.com/az-digital/az_quickstart.git",
+            "no-api": true
+        },
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "1": {
             "type": "composer",
             "url": "https://asset-packagist.org"
         },
-        {
+        "2": {
             "type": "vcs",
             "url": "https://github.com/az-digital/phpcs-security-audit",
             "no-api": true
         }
-    ],
+    },
     "require": {
         "php": ">=8.3",
-        "az-digital/az_quickstart": "~2.14",
+        "az-digital/az_quickstart": "dev-issue/3471",
         "composer/installers": "2.3.0",
         "cweagans/composer-patches": "1.7.3",
         "drupal/core-composer-scaffold": "^11.1",
@@ -38,7 +43,7 @@
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
-        "az-digital/az-quickstart-dev": "~1",
+        "az-digital/az-quickstart-dev": "dev-issue/3471",
         "drupal/core-dev": "^11.1"
     },
     "conflict": {
@@ -64,7 +69,9 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "pre-install-cmd": [
@@ -90,26 +97,44 @@
             "drupal/core": "-p2"
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
+            "web/core": [
+                "type:drupal-core"
+            ],
             "web/libraries/{$name}": [
                 "type:bower-asset",
                 "type:drupal-library",
                 "type:npm-asset"
             ],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "installer-types": [
             "bower-asset",
             "npm-asset"
         ],
         "drupal-scaffold": {
-            "allowed-packages": ["az-digital/az_quickstart"],
+            "allowed-packages": [
+                "az-digital/az_quickstart"
+            ],
             "file-mapping": {
                 "[project-root]/.editorconfig": {
                     "path": "web/core/assets/scaffold/files/editorconfig",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fbd5df1f2880fe45130e0bb65d3b8e6",
+    "content-hash": "3fe0872def947d3d74156a545acc20a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -151,11 +151,17 @@
         },
         {
             "name": "az-digital/az_quickstart",
-            "version": "dev-main",
+            "version": "dev-issue/3471",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/az-digital/az_quickstart.git",
+                "reference": "88e8ccee646d18d004973c1b0fd52ea60f9f3165"
+            },
             "dist": {
-                "type": "path",
-                "url": "/usr/local/quickstart-install-profile",
-                "reference": "26ff5f0ad1f88f7187420d3d6621ec781708560e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/az-digital/az_quickstart/zipball/88e8ccee646d18d004973c1b0fd52ea60f9f3165",
+                "reference": "88e8ccee646d18d004973c1b0fd52ea60f9f3165",
+                "shasum": ""
             },
             "require": {
                 "az-digital/arizona-bootstrap": "2.0.27",
@@ -434,9 +440,7 @@
             "support": {
                 "docs": "https://quickstart.arizona.edu/help"
             },
-            "transport-options": {
-                "relative": false
-            }
+            "time": "2025-04-07T16:32:04+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
