@@ -39,8 +39,8 @@
     "require-dev": {
         "az-digital/az-quickstart-dev": "~1",
         "drupal/core-dev": "^11.2",
-        "mglaman/phpstan-drupal": "^2.0 as 1.2.11",
-        "phpstan/phpstan-deprecation-rules": "^2.0 as 1.0.0"
+        "mglaman/phpstan-drupal": "2.0.7 as 1.2.11",
+        "phpstan/phpstan-deprecation-rules": "2.0.3 as 1.0.0"
     },
     "conflict": {
         "drupal/drupal": "*"
