@@ -30,16 +30,15 @@
         "az-digital/az_quickstart": "~2.14",
         "composer/installers": "2.3.0",
         "cweagans/composer-patches": "1.7.3",
-        "drupal/core-composer-scaffold": "^11.1",
+        "drupal/core-composer-scaffold": "^11.2",
         "drush/drush": "^12.4.3 || ^13.4.0",
-        "mglaman/composer-drupal-lenient": "^1.0",
         "oomphinc/composer-installers-extender": "2.0.1",
         "vlucas/phpdotenv": "5.6.0",
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
         "az-digital/az-quickstart-dev": "~1",
-        "drupal/core-dev": "^11.1"
+        "drupal/core-dev": "^11.2"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -53,7 +52,6 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
-            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
@@ -124,12 +122,6 @@
             "locations": {
                 "web-root": "web/"
             }
-        },
-        "drupal-lenient": {
-            "allowed-list": [
-                "drupal/media_migration",
-                "drupal/migrate_queue_importer"
-            ]
         }
     }
 }
