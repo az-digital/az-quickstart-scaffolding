@@ -2,8 +2,13 @@ version: 2
 updates:
   - package-ecosystem: "composer"
     directory: "/"
+    target-branch: "main"
     schedule:
       interval: "daily"
-    reviewers:
-      - "az-digital/developers"
- 
+    open-pull-requests-limit: 10
+  - package-ecosystem: "composer"
+    directory: "/"
+    target-branch: "2.x"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10 
