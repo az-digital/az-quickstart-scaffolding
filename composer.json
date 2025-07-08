@@ -18,11 +18,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/az-digital/phpcs-security-audit",
-            "no-api": true
         }
     ],
     "require": {
@@ -37,7 +32,7 @@
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
-        "az-digital/az-quickstart-dev": "~1",
+        "az-digital/az-quickstart-dev": "~3",
         "drupal/core-dev": "~10.4.0"
     },
     "conflict": {
