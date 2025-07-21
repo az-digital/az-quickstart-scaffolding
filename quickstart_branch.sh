@@ -28,7 +28,7 @@ while (( "$#" )); do
 done
 
 # Compute the expected composer package name of the requested branch.
-if [[ $BRANCH =~ ^[0-9]\. ]]; then
+if [[ $BRANCH =~ ^[0-9]\.[0-9x] ]]; then
   BRANCH="${BRANCH}-dev"
 else
   BRANCH="dev-${BRANCH}"
