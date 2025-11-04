@@ -11,4 +11,31 @@ updates:
     target-branch: "2.x"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 10 
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "php"
+      - "2.x only"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "main"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 5
+    labels:
+      - "dependencies"
+      - "github_actions"
+      - "ci"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "2.x"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 5
+    labels:
+      - "dependencies"
+      - "github_actions"
+      - "ci"
+      - "2.x only"
