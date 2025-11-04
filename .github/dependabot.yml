@@ -26,3 +26,15 @@ updates:
       - "dependencies"
       - "github_actions"
       - "ci"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "2.x"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 5
+    labels:
+      - "dependencies"
+      - "github_actions"
+      - "ci"
+      - "2.x only"
