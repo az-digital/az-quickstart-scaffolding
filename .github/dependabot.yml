@@ -18,6 +18,7 @@ updates:
       - "2.x only"
   - package-ecosystem: "github-actions"
     directory: "/"
+    target-branch: "main"
     schedule:
       interval: "daily"
     cooldown:
