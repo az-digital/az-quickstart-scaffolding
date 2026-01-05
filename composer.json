@@ -14,6 +14,62 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "npm-asset/blazy",
+                "version": "1.8.2",
+                "dist": {
+                    "url": "https://registry.npmjs.org/blazy/-/blazy-1.8.2.tgz",
+                    "type": "tar"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "npm-asset/bootstrap-datepicker",
+                "version": "1.10.1",
+                "dist": {
+                    "url": "https://registry.npmjs.org/bootstrap-datepicker/-/bootstrap-datepicker-1.10.1.tgz",
+                    "type": "tar"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "npm-asset/easepick--bundle",
+                "version": "1.2.1",
+                "dist": {
+                    "url": "https://registry.npmjs.org/@easepick/bundle/-/bundle-1.2.1.tgz",
+                    "type": "tar"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "npm-asset/jquery-ui-touch-punch",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "npm-asset/slick-carousel",
+                "version": "1.6.0",
+                "dist": {
+                    "url": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.6.0.tgz",
+                    "type": "tar"
+                }
+            }
         }
     ],
     "require": {
@@ -38,6 +94,9 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
+        "secure-http": true,
+        "disable-tls": false,
+        "github-protocols": ["https"],
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
