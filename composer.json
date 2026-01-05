@@ -94,9 +94,6 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
-        "secure-http": true,
-        "disable-tls": false,
-        "github-protocols": ["https"],
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
