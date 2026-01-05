@@ -14,10 +14,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -85,9 +81,7 @@
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": [
-                "type:bower-asset",
-                "type:drupal-library",
-                "type:npm-asset"
+                "type:drupal-library"
             ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
@@ -97,10 +91,6 @@
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
         },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
         "drupal-scaffold": {
             "allowed-packages": ["az-digital/az_quickstart"],
             "file-mapping": {
