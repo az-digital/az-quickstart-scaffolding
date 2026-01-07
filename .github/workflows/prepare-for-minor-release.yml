@@ -1,5 +1,5 @@
 name: Prepare for minor release
-run-name: Update az-quickstart-scaffolding repository for new `${{ github.event.client_payload.release_branch_name }}` minor release branch.
+run-name: Update az-quickstart-scaffolding repository for new `${{ github.event.client_payload.release_branch_name }}` minor release branch (from ${{ github.event.client_payload.source_branch_name }}).
 on:
   repository_dispatch:
     types: az_quickstart_prep_for_minor_release
@@ -11,11 +11,13 @@ jobs:
       - name: Setup PHP with composer v2
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.3'
           tools: composer:v2
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.source_branch_name }}
 
       - name: Set up git
         run: |
@@ -56,12 +58,13 @@ jobs:
             quickstart_branch.sh
             .lando.yml
             .probo.yaml
-            composer.json
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.source_branch_name }}
 
-      - name: Update the az-digital/az_quickstart composer.json requirement on main branch
+      - name: Update the az-digital/az_quickstart composer.json requirement on ${{ github.event.client_payload.source_branch_name }} branch
         run: |
           composer require az-digital/az_quickstart ${{ github.event.client_payload.next_release_branch_alias_constraint }} --no-update --no-scripts --no-interaction
 
@@ -70,8 +73,8 @@ jobs:
         with:
           title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
           commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-          branch: prepare-main-for-${{ github.event.client_payload.release_branch_name }}
-          base: main
+          branch: prepare-${{ github.event.client_payload.source_branch_name }}-for-${{ github.event.client_payload.release_branch_name }}
+          base: ${{ github.event.client_payload.source_branch_name }}
           delete-branch: true
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           add-paths: |
