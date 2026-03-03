@@ -48,8 +48,8 @@ jobs:
       - name: Push required changes to new branch so we can make a pull request
         uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
-          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          title: Prepare repository for new minor release branch ${{ github.event.client_payload.release_branch_name }}
+          commit-message: Prepare repository for new minor release branch ${{ github.event.client_payload.release_branch_name }}
           branch: prepare-${{ github.event.client_payload.release_branch_name }}-for-minor-release
           base: ${{ github.event.client_payload.release_branch_name }}
           delete-branch: true
@@ -71,8 +71,8 @@ jobs:
       - name: Push required changes to new branch so we can make a pull request
         uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
-          title: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
-          commit-message: Prepare repository for new minor release branch ${{ inputs.release_branch_name }}
+          title: Prepare `${{ github.event.client_payload.source_branch_name }}` branch for new minor release branch ${{ github.event.client_payload.release_branch_name }}
+          commit-message: Prepare `${{ github.event.client_payload.source_branch_name }}` branch for new minor release branch ${{ github.event.client_payload.release_branch_name }}
           branch: prepare-${{ github.event.client_payload.source_branch_name }}-for-${{ github.event.client_payload.release_branch_name }}
           base: ${{ github.event.client_payload.source_branch_name }}
           delete-branch: true
