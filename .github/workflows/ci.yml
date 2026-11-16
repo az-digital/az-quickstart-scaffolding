@@ -1,0 +1,35 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
+      - '2.x'
+      - '[0-9]+.[0-9]+.x'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  # Builds a Quickstart site from this branch of the scaffolding and runs the
+  # shared Quickstart checks against it. The ref after the @ selects which
+  # az_quickstart branch the workflow definition comes from, and is updated by
+  # the "Prepare for minor release" workflow when a release branch is created.
+  ci:
+    # TODO: Change this ref to @main before merging. It temporarily points at
+    # the az-digital/az_quickstart#6275 branch, which adds the shared workflow.
+    uses: az-digital/az_quickstart/.github/workflows/ci-reusable.yml@issue/6273-reusable-ci-workflow
+    permissions:
+      contents: read
+      # Required by the shared workflow's eslint job, even though it is
+      # disabled below.
+      checks: write
+      pull-requests: read
+    with:
+      # These checks only apply to the az_quickstart repository itself.
+      eslint: false
+      yarn-audit: false
