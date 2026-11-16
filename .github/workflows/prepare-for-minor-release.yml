@@ -45,6 +45,11 @@ jobs:
           NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
           sed -i "s/PROFILE_BRANCH=main/PROFILE_BRANCH=$NEW_VERSION/g" .probo.yaml
 
+      - name: Update CI workflow in release branch
+        run: |
+          NEW_VERSION=${{ github.event.client_payload.release_branch_name }}
+          sed -i "s/ci-reusable.yml@main/ci-reusable.yml@$NEW_VERSION/g" .github/workflows/ci.yml
+
       - name: Push required changes to new branch so we can make a pull request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
@@ -58,6 +63,7 @@ jobs:
             quickstart_branch.sh
             .lando.yml
             .probo.yaml
+            .github/workflows/ci.yml
 
       - name: Checkout az-quickstart-scaffolding
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
